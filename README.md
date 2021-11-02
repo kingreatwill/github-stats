@@ -6,7 +6,7 @@
 ![](https://github.com/kingreatwill/github-stats/blob/master/generated/languages.svg)
 
 </a>
-
+![](https://github.com/kingreatwill/github-stats/blob/master/generated/contributions.svg)
 Generate visualizations of GitHub user and repository statistics using GitHub
 Actions.
 
