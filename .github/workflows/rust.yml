@@ -1,12 +1,8 @@
 name: Generate Contributions
 
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron: "55 23 * * *"
-  pull_request:
-    branches: [ master ]
 
 env:
   CARGO_TERM_COLOR: always
