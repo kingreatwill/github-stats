@@ -21,4 +21,4 @@ jobs:
     - name: githubchart
       run: |
         gem install githubchart
-        githubchart -u username generated/contributions.svg
+        githubchart -u kingreatwill generated/contributions.svg
