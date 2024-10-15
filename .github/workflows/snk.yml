@@ -4,7 +4,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "50 22 * * 5"
 permissions:
   pull-requests: write
   contents: write
