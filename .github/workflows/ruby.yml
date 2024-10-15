@@ -1,0 +1,31 @@
+name: Generate Contributions
+
+on:
+  schedule:
+    - cron: "55 23 * * 0"
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+    - name: githubchart
+      run: |
+        gem install githubchart
+        githubchart -u kingreatwill generated/contributions.svg
+    - name: Commit to the repo
+      run: |
+        git config --global user.name "kingreatwill"
+        git config --global user.email "350840291@qq.com"
+        git add .
+        # "echo" returns true so the build succeeds, even if no changed files
+        git commit -m 'Update generated files' || echo
+        git push
