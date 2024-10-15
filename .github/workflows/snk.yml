@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
-        uses: actions/checkout@v2.5.0
+        uses: actions/checkout@v4
       - name: Setup Platane
         uses: Platane/snk@v3
         with:
@@ -33,3 +33,6 @@ jobs:
       - name: Push changes
         if: steps.commit.outputs.push == 'true'
         uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
