@@ -38,6 +38,7 @@ jobs:
         shell: bash
       - name: Push changes
         if: steps.commit.outputs.push == 'true'
+        # 这个也可以https://github.com/crazy-max/ghaction-github-pages
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
