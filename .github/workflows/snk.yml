@@ -5,6 +5,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
+permissions:
+  pull-requests: write
+  contents: write
+  repository-projects: write
 jobs:
   Setup_And_Run_And_Push:
     runs-on: ubuntu-latest
