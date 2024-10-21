@@ -21,6 +21,7 @@ jobs:
       run: |
         git config --global user.name "kingreatwill"
         git config --global user.email "350840291@qq.com"
+        git fetch --all
         git checkout -b master origin/master
     - name: githubchart
       run: |
