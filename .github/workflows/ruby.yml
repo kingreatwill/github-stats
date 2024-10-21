@@ -25,6 +25,7 @@ jobs:
       run: |
         git config --global user.name "kingreatwill"
         git config --global user.email "350840291@qq.com"
+        git checkout -b master origin/master
         git add .
         # "echo" returns true so the build succeeds, even if no changed files
         git commit -m 'Update generated files' || echo
