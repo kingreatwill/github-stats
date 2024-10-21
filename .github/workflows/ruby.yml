@@ -12,11 +12,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2    
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
         bundler-cache: true
+    - name: checkout the repo
+      run: |
+        git config --global user.name "kingreatwill"
+        git config --global user.email "350840291@qq.com"
+        git checkout -b master origin/master
     - name: githubchart
       run: |
         gem install githubchart
@@ -25,7 +30,6 @@ jobs:
       run: |
         git config --global user.name "kingreatwill"
         git config --global user.email "350840291@qq.com"
-        git checkout -b master origin/master
         git add .
         # "echo" returns true so the build succeeds, even if no changed files
         git commit -m 'Update generated files' || echo
